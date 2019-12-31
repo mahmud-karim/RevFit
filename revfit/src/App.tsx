@@ -1,23 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import { Exam } from './Youtubeexapl/ReactYoutubeExampleComponent';
+import TabsWrappedLabel from './Tab-Component/TabComponent';
+import DisabledTabs from './Tab-Component/TabComponent';
+import PersistentDrawerLeft from './Tab-Component/TabComponent';
 
 const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <PersistentDrawerLeft/>
+        <Exam/>
       </header>
     </div>
   );
