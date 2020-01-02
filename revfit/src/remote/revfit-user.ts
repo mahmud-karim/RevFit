@@ -1,4 +1,4 @@
-import { revfitUserClient } from "./revfit-user-client";
+import { revfitUserClient } from "./revfit-client";
 
 export async function revfitRemoteLogin(username: string, password: string) {
     const credentails = {
