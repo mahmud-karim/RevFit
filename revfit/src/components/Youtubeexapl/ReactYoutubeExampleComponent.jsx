@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import YouTube from 'react-youtube'
+import React, { Component } from './node_modules/react'
+import YouTube from './node_modules/react-youtube'
 
 
 class ReactYouTubeExampleComponent extends Component {
