@@ -7,7 +7,7 @@ class ReactYouTubeExampleComponent extends Component {
     // access to player in all event handlers via event.target
     // event.target.playVideoAt(50) // 50 seconds
     const player = event.target
-    event.target.playVideo()
+    event.target.pauseVideo()
   
    
     console.log(event.target)
@@ -15,7 +15,7 @@ class ReactYouTubeExampleComponent extends Component {
   
   render () {
     const opts = {
-      height: '390',
+      height: '390',  
       width: '640',
       playerVars: { // https://developers.google.com/youtube/player_parameters
         autoplay: 1
@@ -44,4 +44,3 @@ export default ReactYouTubeExampleComponent
    );
  }
  }
-            
