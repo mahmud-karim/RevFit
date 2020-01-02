@@ -5,8 +5,13 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import { Exam } from '../Youtubeexapl/DayOneComponent';
-import { DayTwo } from '../Youtubeexapl/DayTwoComponent';
+import { DaySix } from '../week-two-videos/DaySixComponent';
+import { DaySeven } from '../week-two-videos/DaySevenComponent';
+import { DayEight } from '../week-two-videos/DayEightComponent';
+import { DayNine } from '../week-two-videos/DayNineComponent';
+import { DayTen } from '../week-two-videos/DayTenComponent';
+
+
 
 
 
@@ -50,7 +55,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }));
 
-export default function ScrollableTabsButtonAuto() {
+export default function WeekTwo() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -79,21 +84,21 @@ export default function ScrollableTabsButtonAuto() {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <Exam/>  
+       <DaySix/> 
         <p className="test">Item One</p>            
       </TabPanel>
       <TabPanel value={value} index={1}>
-     <DayTwo/>
+     <DaySeven/>
         
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+       <DayEight/>
       </TabPanel>
       <TabPanel value={value} index={3}>
-        Item Four
+       <DayNine/>
       </TabPanel>
       <TabPanel value={value} index={4}>
-        Item Five
+    <DayTen/>
       </TabPanel>
      
      
