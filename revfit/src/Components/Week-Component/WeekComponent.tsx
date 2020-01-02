@@ -1,11 +1,7 @@
 import React from 'react';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-
+import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
-import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
-import ScrollableTabsButtonAuto from '../Tab-Component/TabComponent';
-import { Exam } from '../Youtubeexapl/ReactYoutubeExampleComponent';
-import { MenuItem } from '@material-ui/core';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -22,12 +18,16 @@ export default function Links() {
   const preventDefault = (event: React.SyntheticEvent) => event.preventDefault();
 
   return (
-      <Router>
-  <Typography>
-
-    <Link to='/WorkOut '>Select Week</Link>
-    
+    <Typography className={classes.root}>
+      <Link to >
+        Link
+      </Link>
+      <Link href="#" onClick={preventDefault} color="inherit">
+        {'color="inherit"'}
+      </Link>
+      <Link href="#" onClick={preventDefault} variant="body2">
+        {'variant="body2"'}
+      </Link>
     </Typography>
-    </Router>
   );
 }

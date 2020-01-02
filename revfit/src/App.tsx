@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Exam } from './Components/Youtubeexapl/ReactYoutubeExampleComponent';
-import TabsWrappedLabel from './Components/Tab-Component/TabComponent';
-import DisabledTabs from './Components/Tab-Component/TabComponent';
-import PersistentDrawerLeft from './Components/Tab-Component/TabComponent';
-import Facebook from './Components/Week-One-Component/WeekOneComponent';
-import VerticalTabs from './Components/Tab-Component/TabComponent';
-import NavTabs from './Components/Tab-Component/TabComponent';
-import FullWidthTabs from './Components/Tab-Component/TabComponent';
-import SimpleTabs from './Components/Tab-Component/TabComponent';
-import ScrollableTabsButtonAuto from './Components/Tab-Component/TabComponent';
-import SimpleDialogDemo from './Components/Week-Component/WeekComponent';
-import MenuPopupState from './Components/Week-Component/WeekComponent';
+import { Exam } from './component/Youtubeexapl/ReactYoutubeExampleComponent';
+import TabsWrappedLabel from './component/Tab-Component/TabComponent';
+import DisabledTabs from './component/Tab-Component/TabComponent';
+import PersistentDrawerLeft from './component/Tab-Component/TabComponent';
+import Facebook from './component/Week-One-Component/WeekOneComponent';
+import VerticalTabs from './component/Tab-Component/TabComponent';
+import NavTabs from './component/Tab-Component/TabComponent';
+import FullWidthTabs from './component/Tab-Component/TabComponent';
+import SimpleTabs from './component/Tab-Component/TabComponent';
+import ScrollableTabsButtonAuto from './component/Tab-Component/TabComponent';
+import SimpleDialogDemo from './component/Week-Component/WeekComponent';
+import MenuPopupState from './component/Week-Component/WeekComponent';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import ButtonLink from './Components/Week-Component/WeekComponent';
-import Links from './Components/Week-Component/WeekComponent';
+import ButtonLink from './component/Week-Component/WeekComponent';
+import Links from './component/Week-Component/WeekComponent';
 
 const App: React.FC = () => {
   return (
