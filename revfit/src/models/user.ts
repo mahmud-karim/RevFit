@@ -5,13 +5,21 @@ export class User {
     password: string; // not null
     firstName: string; // not null
     lastName: string; // not null
-    email: string; // not null
-    constructor(userId: number, username: string, password: string, firstName: string, lastName: string, email: string) {
+    weight: number; // not null
+    height: number;
+    gender: string;
+    startingWeight: number;
+    goalWeight: number;
+    constructor(userId: number, username: string, password: string, firstName: string, lastName: string, weight: number, height: number, gender: string, startingWeight: number, goalWeight: number) {
         this.userId = userId;
         this.username = username;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.email = email;
+        this.weight = weight;
+        this.height = height;
+        this.gender = gender;
+        this.startingWeight = startingWeight;
+        this.goalWeight = goalWeight;
     }
 }
