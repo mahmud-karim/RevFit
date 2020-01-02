@@ -1,6 +1,6 @@
 import React, { SyntheticEvent } from 'react'
 import { Typography, Link, Container, CssBaseline, TextField, FormControlLabel, Checkbox, Button, Grid, Box } from '@material-ui/core'
-//import { User } from '../../models/user'
+import { User } from '../../models/user'
 //import { Link as Link2, Redirect } from 'react-router-dom';
 
 function Copyright() {
@@ -14,8 +14,8 @@ function Copyright() {
 }
 
 interface ILoginComponentProps {
-    //user: User
-    ersLogin: (u: string, p: string) => void
+    user: User
+    revfitLogin: (u: string, p: string) => void
 }
 
 export class LoginComponent extends React.Component<ILoginComponentProps, any>{
@@ -42,7 +42,7 @@ export class LoginComponent extends React.Component<ILoginComponentProps, any>{
     submitLogin = async (e: SyntheticEvent) => {
         e.preventDefault()
         try {
-            await this.props.ersLogin(this.state.username, this.state.password)
+            await this.props.revfitLogin(this.state.username, this.state.password)
             this.setState({
                 ...this.state,
                 invalid: 'Login Failed Username or Password Wrong'
@@ -53,13 +53,6 @@ export class LoginComponent extends React.Component<ILoginComponentProps, any>{
     }
 
     render() {
-        // if (this.props.user.role.role === 'finance-manager') {
-        //     return <Redirect to="/finance-manger" />
-        // } else if (this.props.user.role.role === 'admin') {
-        //     return <Redirect to="/admin" />
-        // } else if (this.props.user.role.role === 'user') {
-        //     return <Redirect to="/userpage" />
-        // }
         return (
             <Container component="main" maxWidth="xs">
                 <CssBaseline />
@@ -125,7 +118,7 @@ export class LoginComponent extends React.Component<ILoginComponentProps, any>{
                 <Box mt={8}>
                     <Copyright />
                 </Box>
-
+                <p>{this.props.user.username}</p>
             </Container>
         )
     }
