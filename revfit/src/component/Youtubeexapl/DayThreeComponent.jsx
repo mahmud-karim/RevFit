@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import YouTube from 'react-youtube'
 
 
-class ReactYouTubeExampleComponent extends Component {
+class DayTwo extends Component {
   videoOnReady (event) {
     // access to player in all event handlers via event.target
     // event.target.playVideoAt(50) // 50 seconds
@@ -34,12 +34,12 @@ class ReactYouTubeExampleComponent extends Component {
   }
 }
 
-export default ReactYouTubeExampleComponent
+export default DayTwo
  export class Exam extends Component{
   render(){
    return (
-     <div className="Exam">
-       <ReactYouTubeExampleComponent videoId='dhYOPzcsbGM'/>
+     <div className="DayTwo">
+       <DayTwoComponent videoId='tux7eKFZn30'/>
      </div>
    );
  }

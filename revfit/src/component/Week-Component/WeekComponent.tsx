@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
+import ScrollableTabsButtonAuto from '../Tab-Component/TabComponent';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -19,15 +20,13 @@ export default function Links() {
 
   return (
     <Typography className={classes.root}>
-      <Link to >
-        Link
+      <Link href="http://localhost:3000/WeekOne" >
+      Week One  {ScrollableTabsButtonAuto}
       </Link>
-      <Link href="#" onClick={preventDefault} color="inherit">
-        {'color="inherit"'}
+      <Link href="http://localhost:3000/WorkOut" >
+      Week Two  {ScrollableTabsButtonAuto}
       </Link>
-      <Link href="#" onClick={preventDefault} variant="body2">
-        {'variant="body2"'}
-      </Link>
+      
     </Typography>
   );
 }

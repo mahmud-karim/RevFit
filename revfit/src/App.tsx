@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Exam } from './component/Youtubeexapl/ReactYoutubeExampleComponent';
+
 import TabsWrappedLabel from './component/Tab-Component/TabComponent';
 import DisabledTabs from './component/Tab-Component/TabComponent';
 import PersistentDrawerLeft from './component/Tab-Component/TabComponent';
@@ -10,11 +10,12 @@ import NavTabs from './component/Tab-Component/TabComponent';
 import FullWidthTabs from './component/Tab-Component/TabComponent';
 import SimpleTabs from './component/Tab-Component/TabComponent';
 import ScrollableTabsButtonAuto from './component/Tab-Component/TabComponent';
-import SimpleDialogDemo from './component/Week-Component/WeekComponent';
+
 import MenuPopupState from './component/Week-Component/WeekComponent';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ButtonLink from './component/Week-Component/WeekComponent';
 import Links from './component/Week-Component/WeekComponent';
+import { DayTwo } from './component/Youtubeexapl/DayTwoComponent';
 
 const App: React.FC = () => {
   return (
@@ -26,12 +27,13 @@ const App: React.FC = () => {
       <Links/>
         {/* <Facebook/> */}
         <Switch>
-          <Route path='/WorkOut' component={ScrollableTabsButtonAuto}/>
+          <Route path='/WeekOne' component={ScrollableTabsButtonAuto}/>
          
       
 
      </Switch>
      </Router>
+     {/* <DayTwo/> */}
       </header>
       
     </div>

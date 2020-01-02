@@ -10,7 +10,8 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Skeleton from '@material-ui/lab/Skeleton';
-import { Exam } from '../Youtubeexapl/ReactYoutubeExampleComponent';
+import { Exam } from '../Youtubeexapl/DayOneComponent';
+
 
 
 const useStyles = makeStyles((theme: Theme) =>

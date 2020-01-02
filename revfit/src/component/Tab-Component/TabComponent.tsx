@@ -5,7 +5,12 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import { Exam } from '../Youtubeexapl/ReactYoutubeExampleComponent';
+import { Exam } from '../Youtubeexapl/DayOneComponent';
+import { DayTwo } from '../Youtubeexapl/DayTwoComponent';
+
+
+
+
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -65,21 +70,21 @@ export default function ScrollableTabsButtonAuto() {
           scrollButtons="auto"
           aria-label="scrollable auto tabs example"
         >
-          <Tab label="Item One" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
-          <Tab label="Item Four" {...a11yProps(3)} />
-          <Tab label="Item Five" {...a11yProps(4)} />
-          <Tab label="Item Six" {...a11yProps(5)} />
-          <Tab label="Item Seven" {...a11yProps(6)} />
+          <Tab label="Day One" {...a11yProps(0)} />
+          <Tab label="Day Two" {...a11yProps(1)} />
+          <Tab label="Day Three" {...a11yProps(2)} />
+          <Tab label="Day Four" {...a11yProps(3)} />
+          <Tab label="Day Five" {...a11yProps(4)} />
+         
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <Exam/>               
+        <Exam/>  
+        <p className="test">Item One</p>            
       </TabPanel>
       <TabPanel value={value} index={1}>
+     <DayTwo/>
         
-        <p className="test">Item Two</p>
       </TabPanel>
       <TabPanel value={value} index={2}>
         Item Three
@@ -90,12 +95,8 @@ export default function ScrollableTabsButtonAuto() {
       <TabPanel value={value} index={4}>
         Item Five
       </TabPanel>
-      <TabPanel value={value} index={5}>
-        Item Six
-      </TabPanel>
-      <TabPanel value={value} index={6}>
-        Item Seven
-      </TabPanel>
+     
+     
     </div>
   );
 }
