@@ -1,17 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
-import { Exam } from './Youtubeexapl/ReactYoutubeExampleComponent';
-import TabsWrappedLabel from './Tab-Component/TabComponent';
-import DisabledTabs from './Tab-Component/TabComponent';
-import PersistentDrawerLeft from './Tab-Component/TabComponent';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { store } from './Store';
+import LoginComponent from './components/login-component/LoginContainer'
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <PersistentDrawerLeft/>
-        <Exam/>
-      </header>
+      <Provider store={store}>
+        <Router>
+          <Switch>
+            <Route path='/login' component={LoginComponent} />
+            <Route path='/' component={LoginComponent} />
+          </Switch>
+        </Router>
+      </Provider>
     </div>
   );
 }
