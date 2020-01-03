@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Chart } from 'react-charts'
- 
+
 export default function Graph() {
   const data = React.useMemo(
     () => [
@@ -15,7 +15,7 @@ export default function Graph() {
     ],
     []
   )
- 
+
   const axes = React.useMemo(
     () => [
       { primary: true, type: 'linear', position: 'bottom' },
@@ -23,8 +23,8 @@ export default function Graph() {
     ],
     []
   )
- 
-  return(
+
+  return (
     // A react-chart hyper-responsively and continuusly fills the available
     // space of its parent element automatically
     <div

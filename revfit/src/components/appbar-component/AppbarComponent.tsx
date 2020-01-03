@@ -15,8 +15,6 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 
 import FitnessCenterSharpIcon from '@material-ui/icons/FitnessCenterSharp';
 import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
@@ -125,7 +123,7 @@ export default function AppbarComponent() {
                         RevFit
                     </Typography>
 
-                   
+
 
                     <BottomNavigationAction className="appbar" label="Home" icon={<HomeIcon />} />
                     <BottomNavigationAction className="appbar" label="Recipes" icon={<MenuBookIcon />} />
@@ -143,15 +141,15 @@ export default function AppbarComponent() {
                     paper: classes.drawerPaper,
                 }}
             >
-            <Typography variant="h6" noWrap>
-                        WorkOuts
+                <Typography variant="h6" noWrap>
+                    WorkOuts
                     </Typography>
                 <div className={classes.drawerHeader}>
                     <IconButton onClick={handleDrawerClose}>
                         {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
                     </IconButton>
                 </div>
-               
+
                 <Divider />
                 <List>
                     {['Week One', 'Week Two', 'Week Three', 'Week Four'].map((text, index) => (
@@ -161,8 +159,8 @@ export default function AppbarComponent() {
                         </ListItem>
                     ))}
                 </List>
-                
-               
+
+
             </Drawer>
             <main
                 className={clsx(classes.content, {
