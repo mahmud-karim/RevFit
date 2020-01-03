@@ -16,20 +16,18 @@ import Graph from './components/graph-test-component/GraphComponent';
 const App: React.FC = () => {
   return (
     <div className="App">
-       
+
       <Provider store={store}>
         <Router>
-       
           <Switch>
-
             <Route path='/weekone' component={ScrollableTabsButtonAuto} />
             <Route path='/weektwo' component={WeekTwo} />
             <Route path='/graph' component={Graph} />
             <Route path='/WorkOut' component={Links} />
             <Route path='/signup' component={SignUpComponent} />
             <Route path='/home' component={HomeComponent} />
-            {/* <Route path='/login' component={LoginComponent} /> */}
-            {/* <Route path='/' component={LoginComponent} /> */}
+            <Route path='/login' component={LoginComponent} />
+            <Route path='/' component={LoginComponent} />
           </Switch>
         </Router>
       </Provider>
