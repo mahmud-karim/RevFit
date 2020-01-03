@@ -17,11 +17,16 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+
+import FitnessCenterSharpIcon from '@material-ui/icons/FitnessCenterSharp';
+import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
+
 import { BottomNavigationAction } from '@material-ui/core';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import BarChartIcon from '@material-ui/icons/BarChart';
 import HomeIcon from '@material-ui/icons/Home';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
+
 
 const drawerWidth = 240;
 
@@ -119,10 +124,14 @@ export default function AppbarComponent() {
                     <Typography variant="h6" noWrap>
                         RevFit
                     </Typography>
+
+                   
+
                     <BottomNavigationAction className="appbar" label="Home" icon={<HomeIcon />} />
                     <BottomNavigationAction className="appbar" label="Recipes" icon={<MenuBookIcon />} />
                     <BottomNavigationAction className="appbar" label="Progress" icon={<BarChartIcon />} />
                     <BottomNavigationAction className="appbar" label="Me" icon={<AccountBoxIcon />} />
+
                 </Toolbar>
             </AppBar>
             <Drawer
@@ -134,36 +143,36 @@ export default function AppbarComponent() {
                     paper: classes.drawerPaper,
                 }}
             >
+            <Typography variant="h6" noWrap>
+                        WorkOuts
+                    </Typography>
                 <div className={classes.drawerHeader}>
                     <IconButton onClick={handleDrawerClose}>
                         {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
                     </IconButton>
                 </div>
+               
                 <Divider />
                 <List>
-                    {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+                    {['Week One', 'Week Two', 'Week Three', 'Week Four'].map((text, index) => (
                         <ListItem button key={text}>
-                            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                            <ListItemIcon>{index % 2 === 0 ? <FitnessCenterSharpIcon /> : <FitnessCenterIcon />}</ListItemIcon>
                             <ListItemText primary={text} />
                         </ListItem>
                     ))}
                 </List>
-                <Divider />
-                <List>
-                    {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItem>
-                    ))}
-                </List>
+                
+               
             </Drawer>
             <main
                 className={clsx(classes.content, {
                     [classes.contentShift]: open,
                 })}
             >
+
+
                 <div className={classes.drawerHeader} />
+
             </main>
         </div>
     );
