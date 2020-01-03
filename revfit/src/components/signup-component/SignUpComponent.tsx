@@ -6,17 +6,13 @@ export class SignUpComponent extends React.Component<any, any> {
         super(props)
         this.state = {
             updated: false,
-            userId: 0,
             username: '',
             password: '',
             weight: 0,
             height: 0,
             gender: '',
             startingWeight: 0,
-            goalWeight: 0,
-            dailyCalories: 0,
-            caloriesUsed: 0,
-            caloriesBurned: 0
+            goalWeight: 0
         }
     }
     postUserId = (e: any) => {
@@ -41,6 +37,18 @@ export class SignUpComponent extends React.Component<any, any> {
         this.setState({
             ...this.state,
             weight: e.target.value
+        })
+    }
+    postHeight = (e: any) => {
+        this.setState({
+            ...this.state,
+            height: e.target.value
+        })
+    }
+    postGender = (e: any) => {
+        this.setState({
+            ...this.state,
+            gender: e.target.value
         })
     }
     postGoalWeight = (e: any) => {
@@ -90,7 +98,78 @@ export class SignUpComponent extends React.Component<any, any> {
 
                     <Card>
                         <form onSubmit={this.postSignUp} noValidate autoComplete="off">
-                            <TextField value={this.state.goalWeight} onChange={this.postGoalWeight} />
+                        <TextField
+                            value={this.state.username}
+                            onChange={this.postUsername}
+                            variant="outlined"
+                            margin="normal"
+                            required
+                            fullWidth
+                            name="Username"
+                            label="Username"
+                            type="username"
+                            id="username"
+                        />
+                        <TextField
+                            value={this.state.password}
+                            onChange={this.postPassword}
+                            variant="outlined"
+                            margin="normal"
+                            required
+                            fullWidth
+                            name="Password"
+                            label="Password"
+                            type="password"
+                            id="password"
+                        />
+                        <TextField
+                            value={this.state.weight}
+                            onChange={this.postWeight}
+                            variant="outlined"
+                            margin="normal"
+                            required
+                            fullWidth
+                            name="Weight"
+                            label="Weight"
+                            type="weight"
+                            id="weight"
+                        />
+                        <TextField
+                            value={this.state.height}
+                            onChange={this.postHeight}
+                            variant="outlined"
+                            margin="normal"
+                            required
+                            fullWidth
+                            name="Height"
+                            label="Height"
+                            type="height"
+                            id="height"
+                        />
+                        <TextField
+                            value={this.state.gender}
+                            onChange={this.postGender}
+                            variant="outlined"
+                            margin="normal"
+                            required
+                            fullWidth
+                            name="Gender"
+                            label="Gender"
+                            type="gender"
+                            id="gender"
+                        />
+                        <TextField
+                            value={this.state.goalWeight}
+                            onChange={this.postGoalWeight}
+                            variant="outlined"
+                            margin="normal"
+                            required
+                            fullWidth
+                            name="Goal Weight"
+                            label="Goal Weight"
+                            type="goal weight"
+                            id="goal weight"
+                        />
                             <br />
                             <Button
                                 type="submit"
