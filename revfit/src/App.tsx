@@ -1,43 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
-
-import TabsWrappedLabel from './component/Tab-Component/WeekOneComponent';
-import DisabledTabs from './component/Tab-Component/WeekOneComponent';
-import PersistentDrawerLeft from './component/Tab-Component/WeekOneComponent';
-import Facebook from './component/Week-One-Component/WeekOneComponent';
-import VerticalTabs from './component/Tab-Component/WeekOneComponent';
-import NavTabs from './component/Tab-Component/WeekOneComponent';
-import FullWidthTabs from './component/Tab-Component/WeekOneComponent';
-import SimpleTabs from './component/Tab-Component/WeekOneComponent';
-
-
-import MenuPopupState from './component/Week-Component/WeekComponent';
+import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import ButtonLink from './component/Week-Component/WeekComponent';
-import Links from './component/Week-Component/WeekComponent';
-import { DayTwo } from './component/Youtubeexapl/DayTwoComponent';
-import ScrollableTabsButtonAuto from './component/Tab-Component/WeekOneComponent';
-import WeekTwo from './component/Tab-Component/WeekTwoComponent';
+import { store } from './Store';
+import LoginComponent from './components/login-component/LoginContainer'
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      
-      <header className="App-header">
-      
-      <Router>
-      <Links/>
-        
-        <Switch>
-          <Route path='/WeekOne' component={ScrollableTabsButtonAuto}/>
-          <Route path='/WeekTwo' component={WeekTwo}/>
-      
-
-     </Switch>
-     </Router>
-     
-      </header>
-      
+      <Provider store={store}>
+        <Router>
+          <Switch>
+            <Route path='/WeekOne' component={ScrollableTabsButtonAuto}/>
+            <Route path='/WeekTwo' component={WeekTwo}/>
+            <Route path='/login' component={LoginComponent} />
+            <Route path='/' component={LoginComponent} />
+          </Switch>
+        </Router>
+      </Provider>
     </div>
   );
 }
