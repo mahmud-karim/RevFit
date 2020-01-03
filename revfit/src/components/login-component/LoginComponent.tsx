@@ -18,6 +18,8 @@ interface ILoginComponentProps {
     revfitLogin: (u: string, p: string) => void
 }
 
+
+
 export class LoginComponent extends React.Component<ILoginComponentProps, any>{
     constructor(props: any) {
         super(props)
