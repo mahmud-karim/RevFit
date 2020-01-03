@@ -1,6 +1,5 @@
 import React from "react"
-import NavbarComponent from "../navbar-component/NavbarComponent"
-import { Container } from "@material-ui/core"
+import { Container, Card, Typography } from "@material-ui/core"
 import AppbarComponent from "../appbar-component/AppbarComponent"
 
 export class HomeComponent extends React.Component<any, any>{
@@ -9,7 +8,14 @@ export class HomeComponent extends React.Component<any, any>{
         return (
             <Container component="main" maxWidth="md">
                 <AppbarComponent />
-                <NavbarComponent />
+                <Card>
+                    <Typography gutterBottom variant="h5" component="h2">
+                        Calories Remaining
+                    </Typography>
+                    <Typography variant="h6" component="h2">
+                        Goal: 2,720 - Food: 0 + Exercise: 0 = 2720
+                    </Typography>
+                </Card>
             </Container>
         )
     }
