@@ -1,10 +1,10 @@
-import React from './node_modules/react';
-import { makeStyles, Theme } from './node_modules/@material-ui/core/styles';
-import AppBar from './node_modules/@material-ui/core/AppBar';
-import Tabs from './node_modules/@material-ui/core/Tabs';
-import Tab from './node_modules/@material-ui/core/Tab';
-import Typography from './node_modules/@material-ui/core/Typography';
-import Box from './node_modules/@material-ui/core/Box';
+import React from 'react';
+import { makeStyles, Theme } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
 import { DaySix } from '../week-two-videos/DaySixComponent';
 import { DaySeven } from '../week-two-videos/DaySevenComponent';
 import { DayEight } from '../week-two-videos/DayEightComponent';
@@ -80,28 +80,28 @@ export default function WeekTwo() {
           <Tab label="Day Three" {...a11yProps(2)} />
           <Tab label="Day Four" {...a11yProps(3)} />
           <Tab label="Day Five" {...a11yProps(4)} />
-         
+
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-       <DaySix/> 
-        <p className="test">Item One</p>            
+        <DaySix />
+        <p className="test">Item One</p>
       </TabPanel>
       <TabPanel value={value} index={1}>
-     <DaySeven/>
-        
+        <DaySeven />
+
       </TabPanel>
       <TabPanel value={value} index={2}>
-       <DayEight/>
+        <DayEight />
       </TabPanel>
       <TabPanel value={value} index={3}>
-       <DayNine/>
+        <DayNine />
       </TabPanel>
       <TabPanel value={value} index={4}>
-    <DayTen/>
+        <DayTen />
       </TabPanel>
-     
-     
+
+
     </div>
   );
 }

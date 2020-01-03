@@ -1,10 +1,10 @@
-import React from './node_modules/react';
-import { makeStyles, Theme } from './node_modules/@material-ui/core/styles';
-import AppBar from './node_modules/@material-ui/core/AppBar';
-import Tabs from './node_modules/@material-ui/core/Tabs';
-import Tab from './node_modules/@material-ui/core/Tab';
-import Typography from './node_modules/@material-ui/core/Typography';
-import Box from './node_modules/@material-ui/core/Box';
+import React from 'react';
+import { makeStyles, Theme } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
 import { Exam } from '../youtubeexapl/DayOneComponent';
 import { DayTwo } from '../youtubeexapl/DayTwoComponent';
 import { DayThree } from '../youtubeexapl/DayThreeComponent';
@@ -25,7 +25,7 @@ interface TabPanelProps {
 function TabPanel(props: TabPanelProps) {
   const { children, value, index, ...other } = props;
 
-  return (  
+  return (
     <Typography
       component="div"
       role="tabpanel"
@@ -79,28 +79,28 @@ export default function ScrollableTabsButtonAuto() {
           <Tab label="Day Three" {...a11yProps(2)} />
           <Tab label="Day Four" {...a11yProps(3)} />
           <Tab label="Day Five" {...a11yProps(4)} />
-         
+
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <Exam/>  
-        <p className="test">Item One</p>            
+        <Exam />
+        <p className="test">Item One</p>
       </TabPanel>
       <TabPanel value={value} index={1}>
-     <DayTwo/>
-        
+        <DayTwo />
+
       </TabPanel>
       <TabPanel value={value} index={2}>
-       <DayThree/>
+        <DayThree />
       </TabPanel>
       <TabPanel value={value} index={3}>
-       <DayFour/>
+        <DayFour />
       </TabPanel>
       <TabPanel value={value} index={4}>
-       <DayFive/>
+        <DayFive />
       </TabPanel>
-     
-     
+
+
     </div>
   );
 }
