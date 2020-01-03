@@ -9,7 +9,6 @@ import LoginComponent from './components/login-component/LoginContainer'
 import { HomeComponent } from './components/home-component/HomeComponent';
 import { Provider } from 'react-redux';
 import Links from './components/week-component/WeekComponent';
-
 import Graph from './components/graph-test-component/GraphComponent';
 
 
@@ -20,6 +19,7 @@ const App: React.FC = () => {
       <Provider store={store}>
         <Router>
           <Switch>
+            <Route path='/graph' component={Graph} />
             <Route path='/weekone' component={ScrollableTabsButtonAuto} />
             <Route path='/weektwo' component={WeekTwo} />
             <Route path='/graph' component={Graph} />
