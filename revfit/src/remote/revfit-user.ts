@@ -1,12 +1,8 @@
 import { revfitUserClient } from "./revfit-client";
 
 export async function revfitRemoteLogin(username: string, password: string) {
-    const credentails = {
-        username,
-        password
-    }
     try {
-        const response = await revfitUserClient.post('/login', credentails)
+        const response = await revfitUserClient.post(`/user/login?username=${username}&password=${password}`)
         if (response.status === 200) {
             return {
                 status: response.status,
