@@ -1,9 +1,9 @@
-import React, { Component } from './node_modules/react'
-import YouTube from './node_modules/react-youtube'
+import React, { Component } from 'react'
+import YouTube from 'react-youtube'
 
 
-class ReactYouTubeExampleComponent extends Component {
-  videoOnReady(event) {
+class ReactYouTubeExampleComponent extends Component<any, any> {
+  videoOnReady(event: any) {
     // access to player in all event handlers via event.target
     // event.target.playVideoAt(50) // 50 seconds
     //const player = event.target
@@ -25,10 +25,7 @@ class ReactYouTubeExampleComponent extends Component {
     return (
       <YouTube
         videoId={videoId}
-        opts={opts}
         onReady={this.videoOnReady}
-
-
       />
     )
   }
