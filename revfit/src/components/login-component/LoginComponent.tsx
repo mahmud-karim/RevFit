@@ -1,6 +1,7 @@
 import React, { SyntheticEvent } from 'react'
 import { Typography, Link, Container, CssBaseline, TextField, FormControlLabel, Checkbox, Button, Grid, Box } from '@material-ui/core'
 import { User } from '../../models/user'
+import { Redirect } from 'react-router'
 //import { Link as Link2, Redirect } from 'react-router-dom';
 
 function Copyright() {
@@ -45,16 +46,27 @@ export class LoginComponent extends React.Component<ILoginComponentProps, any>{
         e.preventDefault()
         try {
             await this.props.revfitLogin(this.state.username, this.state.password)
-            this.setState({
-                ...this.state,
-                invalid: 'Login Failed Username or Password Wrong'
-            })
+            if (this.props.user.userId) {
+                this.setState({
+                    ...this.state,
+                    invalid: 'Correct'
+                })
+            } else {
+                this.setState({
+                    ...this.state,
+                    invalid: 'Login Failed Username or Password Wrong'
+                })
+            }
+
         } catch (e) {
 
         }
     }
 
     render() {
+        if (this.state.invalid === 'Correct') {
+            return <Redirect to="/home" />
+        }
         return (
             <Container component="main" maxWidth="xs">
                 <CssBaseline />
