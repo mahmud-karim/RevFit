@@ -1,6 +1,5 @@
 import React, { SyntheticEvent } from 'react'
 import { Container, Card, TextField, Button } from '@material-ui/core'
-import { submitSignUp } from '../../remote/signup-clients/signup'
 
 export class SignUpComponent extends React.Component<any, any> {
     constructor(props: any) {
@@ -58,23 +57,23 @@ export class SignUpComponent extends React.Component<any, any> {
     }
     postSignUp = async (e: SyntheticEvent) => {
         e.preventDefault()
-        try {
-            let u = await submitSignUp(this.state.username, this.state.password, this.state.weight, this.state.height, this.state.gender, this.state.goalWeight)
-            if (u.status === 200) {
-                this.setState({
-                    ...this.state,
-                    updated: true
-                })
-            } else {
-                this.setState({
-                    ...this.state,
-                    updated: false
-                })
-            }
-        } catch (e) {
-            console.log(e);
+        // try {
+        //     //let u = await submitSignUp(this.state.username, this.state.password, this.state.weight, this.state.height, this.state.gender, this.state.goalWeight)
+        //     if (u.status === 200) {
+        //         this.setState({
+        //             ...this.state,
+        //             updated: true
+        //         })
+        //     } else {
+        //         this.setState({
+        //             ...this.state,
+        //             updated: false
+        //         })
+        //     }
+        // } catch (e) {
+        //     console.log(e);
 
-        }
+        // }
 
 
     }
@@ -87,25 +86,25 @@ export class SignUpComponent extends React.Component<any, any> {
         }
         return (
             <div>
-            <Container component="main" maxWidth="xs">
-                
-                <Card>
-                    <form onSubmit={this.postSignUp} noValidate autoComplete="off">
-                        <TextField value={this.state.goalWeight} onChange={this.postGoalWeight} />
-                        <br />
-                        <Button
-                            type="submit"
-                            fullWidth
-                            variant="contained"
-                            color="inherit"
-                            className='{classes.submit}'
-                        >
-                            Post SignUp
+                <Container component="main" maxWidth="xs">
+
+                    <Card>
+                        <form onSubmit={this.postSignUp} noValidate autoComplete="off">
+                            <TextField value={this.state.goalWeight} onChange={this.postGoalWeight} />
+                            <br />
+                            <Button
+                                type="submit"
+                                fullWidth
+                                variant="contained"
+                                color="inherit"
+                                className='{classes.submit}'
+                            >
+                                Post SignUp
                         </Button>
-                    </form>
-                    {message()}
-                </Card>
-            </Container></div>
+                        </form>
+                        {message()}
+                    </Card>
+                </Container></div>
         )
     }
 }
