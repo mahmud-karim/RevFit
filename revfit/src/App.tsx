@@ -8,19 +8,27 @@ import { store } from './Store';
 import LoginComponent from './components/login-component/LoginContainer'
 import { HomeComponent } from './components/home-component/HomeComponent';
 import { Provider } from 'react-redux';
+import Links from './components/week-component/WeekComponent';
+
+import Graph from './components/graph-test-component/GraphComponent';
+
 
 const App: React.FC = () => {
   return (
     <div className="App">
+       
       <Provider store={store}>
         <Router>
+       
           <Switch>
+          <Route path='/graph' component={Graph} />
+          <Route path='/WorkOut' component={Links} />
             <Route path='/WeekOne' component={ScrollableTabsButtonAuto} />
             <Route path='/WeekTwo' component={WeekTwo} />
             <Route path='/signup' component={SignUpComponent} />
             <Route path='/home' component={HomeComponent} />
-            <Route path='/login' component={LoginComponent} />
-            <Route path='/' component={LoginComponent} />
+            {/* <Route path='/login' component={LoginComponent} /> */}
+            {/* <Route path='/' component={LoginComponent} /> */}
           </Switch>
         </Router>
       </Provider>

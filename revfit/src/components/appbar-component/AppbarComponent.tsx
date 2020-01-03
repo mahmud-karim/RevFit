@@ -17,8 +17,8 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
-import { Link } from 'react-router-dom';
-
+import FitnessCenterSharpIcon from '@material-ui/icons/FitnessCenterSharp';
+import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -114,7 +114,7 @@ export default function AppbarComponent() {
                     <Typography variant="h6" noWrap>
                         RevFit
                     </Typography>
-                    <Link to="/youtube">YouTube</Link>
+                   
                 </Toolbar>
             </AppBar>
             <Drawer
@@ -126,36 +126,33 @@ export default function AppbarComponent() {
                     paper: classes.drawerPaper,
                 }}
             >
+            <Typography variant="h6" noWrap>
+                        WorkOuts
+                    </Typography>
                 <div className={classes.drawerHeader}>
                     <IconButton onClick={handleDrawerClose}>
                         {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
                     </IconButton>
                 </div>
+               
                 <Divider />
                 <List>
-                    {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+                    {['Week One', 'Week Two', 'Week Three', 'Week Four'].map((text, index) => (
                         <ListItem button key={text}>
-                            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                            <ListItemIcon>{index % 2 === 0 ? <FitnessCenterSharpIcon /> : <FitnessCenterIcon />}</ListItemIcon>
                             <ListItemText primary={text} />
                         </ListItem>
                     ))}
                 </List>
-                <Divider />
-                <List>
-                    {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItem>
-                    ))}
-                </List>
+                
+               
             </Drawer>
             <main
                 className={clsx(classes.content, {
                     [classes.contentShift]: open,
                 })}
             >
-                <div className={classes.drawerHeader} />
+                <div className={classes.drawerHeader} />        
                 <Typography paragraph>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                     ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
