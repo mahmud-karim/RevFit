@@ -80,28 +80,28 @@ export default function WeekTwo() {
           <Tab label="Day Three" {...a11yProps(2)} />
           <Tab label="Day Four" {...a11yProps(3)} />
           <Tab label="Day Five" {...a11yProps(4)} />
-         
+
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-       <DaySix/> 
-        <p className="test">Item One</p>            
+        <DaySix />
+        <p className="test">Item One</p>
       </TabPanel>
       <TabPanel value={value} index={1}>
-     <DaySeven/>
-        
+        <DaySeven />
+
       </TabPanel>
       <TabPanel value={value} index={2}>
-       <DayEight/>
+        <DayEight />
       </TabPanel>
       <TabPanel value={value} index={3}>
-       <DayNine/>
+        <DayNine />
       </TabPanel>
       <TabPanel value={value} index={4}>
-    <DayTen/>
+        <DayTen />
       </TabPanel>
-     
-     
+
+
     </div>
   );
 }
