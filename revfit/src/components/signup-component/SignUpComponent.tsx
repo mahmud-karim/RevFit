@@ -8,6 +8,8 @@ export class SignUpComponent extends React.Component<any, any> {
             updated: false,
             username: '',
             password: '',
+            firstName: '',
+            lastName: '',
             weight: 0,
             height: 0,
             gender: '',
@@ -25,6 +27,18 @@ export class SignUpComponent extends React.Component<any, any> {
         this.setState({
             ...this.state,
             username: e.target.value
+        })
+    }
+    postFirstName = (e: any) => {
+        this.setState({
+            ...this.state,
+            firstName: e.target.value
+        })
+    }
+    postLastName = (e: any) => {
+        this.setState({
+            ...this.state,
+            lastName: e.target.value
         })
     }
     postPassword = (e: any) => {
@@ -121,7 +135,31 @@ export class SignUpComponent extends React.Component<any, any> {
                             label="Password"
                             type="password"
                             id="password"
-                        />
+                        /> 
+                        <TextField
+                        value={this.state.firstName}
+                        onChange={this.postFirstName}
+                        variant="outlined"
+                        margin="normal"
+                        required
+                        fullWidth
+                        name="First Name"
+                        label="First Name"
+                        type="First Name"
+                        id="First Name"
+                    />
+                     <TextField
+                    value={this.state.lastName}
+                    onChange={this.postLastName}
+                    variant="outlined"
+                    margin="normal"
+                    required
+                    fullWidth
+                    name="Last Name"
+                    label="Last Name"
+                    type="Last Name"
+                    id="Last Name"
+                />
                         <TextField
                             value={this.state.weight}
                             onChange={this.postWeight}
