@@ -1,10 +1,10 @@
-import React from 'react';
-import { makeStyles, Theme } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
+import React from './node_modules/react';
+import { makeStyles, Theme } from './node_modules/@material-ui/core/styles';
+import AppBar from './node_modules/@material-ui/core/AppBar';
+import Tabs from './node_modules/@material-ui/core/Tabs';
+import Tab from './node_modules/@material-ui/core/Tab';
+import Typography from './node_modules/@material-ui/core/Typography';
+import Box from './node_modules/@material-ui/core/Box';
 import { DaySix } from '../week-two-videos/DaySixComponent';
 import { DaySeven } from '../week-two-videos/DaySevenComponent';
 import { DayEight } from '../week-two-videos/DayEightComponent';

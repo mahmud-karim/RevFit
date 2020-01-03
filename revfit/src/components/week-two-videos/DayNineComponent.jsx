@@ -6,7 +6,7 @@ class ReactYouTubeExampleComponent extends Component {
     videoOnReady1(event) {
         // access to player in all event handlers via event.target
         // event.target.playVideoAt(50) // 50 seconds
-        const player = event.target
+        // const player = event.target
         event.target.pauseVideo()
 
 

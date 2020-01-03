@@ -1,15 +1,16 @@
-import React from 'react';
-import { makeStyles, Theme } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import { Exam } from '../Youtubeexapl/DayOneComponent';
-import { DayTwo } from '../Youtubeexapl/DayTwoComponent';
-import { DayThree } from '../Youtubeexapl/DayThreeComponent';
-import { DayFour } from '../Youtubeexapl/DayFourComponent';
-import { DayFive } from '../Youtubeexapl/DayFiveComponent';
+import React from './node_modules/react';
+import { makeStyles, Theme } from './node_modules/@material-ui/core/styles';
+import AppBar from './node_modules/@material-ui/core/AppBar';
+import Tabs from './node_modules/@material-ui/core/Tabs';
+import Tab from './node_modules/@material-ui/core/Tab';
+import Typography from './node_modules/@material-ui/core/Typography';
+import Box from './node_modules/@material-ui/core/Box';
+import { Exam } from '../youtubeexapl/DayOneComponent';
+import { DayTwo } from '../youtubeexapl/DayTwoComponent';
+import { DayThree } from '../youtubeexapl/DayThreeComponent';
+import { DayFour } from '../youtubeexapl/DayFourComponent';
+import { DayFive } from '../youtubeexapl/DayFiveComponent';
+
 
 
 
@@ -24,7 +25,7 @@ interface TabPanelProps {
 function TabPanel(props: TabPanelProps) {
   const { children, value, index, ...other } = props;
 
-  return (
+  return (  
     <Typography
       component="div"
       role="tabpanel"

@@ -6,7 +6,7 @@ class ReactYouTubeExampleComponent extends Component {
     videoOnReady1(event) {
         // access to player in all event handlers via event.target
         // event.target.playVideoAt(50) // 50 seconds
-        const player = event.target
+        // const player = event.target
         event.target.pauseVideo()
 
 
@@ -35,11 +35,11 @@ class ReactYouTubeExampleComponent extends Component {
 }
 
 export default ReactYouTubeExampleComponent
-export class DaySix extends Component {
+export class DayTwo extends Component {
     render() {
         return (
-            <div className="DaySix">
-                <ReactYouTubeExampleComponent videoId='xZWBE8BfHOY' />
+            <div className="DayTwo">
+                <ReactYouTubeExampleComponent videoId='8PISPefC2Jw' />
             </div>
         );
 

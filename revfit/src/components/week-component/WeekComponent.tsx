@@ -2,8 +2,11 @@ import React from 'react';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
-import ScrollableTabsButtonAuto from '../Tab-Component/WeekOneComponent';
-import WeekTwo from '../Tab-Component/WeekTwoComponent';
+import ScrollableTabsButtonAuto from '../tab-component/WeekOneComponent';
+import WeekTwo from '../tab-component/WeekTwoComponent';
+
+
+
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -18,7 +21,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export default function Links() {
   const classes = useStyles();
-  const preventDefault = (event: React.SyntheticEvent) => event.preventDefault();
+  // const preventDefault = (event: React.SyntheticEvent) => event.preventDefault();
 
   return (
     
