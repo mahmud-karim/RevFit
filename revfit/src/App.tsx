@@ -15,8 +15,8 @@ const App: React.FC = () => {
       <Provider store={store}>
         <Router>
           <Switch>
-            <Route path='/WeekOne' component={ScrollableTabsButtonAuto} />
-            <Route path='/WeekTwo' component={WeekTwo} />
+            <Route path='/weekone' component={ScrollableTabsButtonAuto} />
+            <Route path='/weektwo' component={WeekTwo} />
             <Route path='/signup' component={SignUpComponent} />
             <Route path='/home' component={HomeComponent} />
             <Route path='/login' component={LoginComponent} />

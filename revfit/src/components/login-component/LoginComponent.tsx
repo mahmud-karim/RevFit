@@ -1,5 +1,5 @@
 import React, { SyntheticEvent } from 'react'
-import { Typography, Link, Container, CssBaseline, TextField, FormControlLabel, Checkbox, Button, Grid, Box } from '@material-ui/core'
+import { Typography, Link, Container, CssBaseline, TextField, FormControlLabel, Checkbox, Button, Box } from '@material-ui/core'
 import { User } from '../../models/user'
 import { Redirect } from 'react-router'
 //import { Link as Link2, Redirect } from 'react-router-dom';
@@ -115,18 +115,9 @@ export class LoginComponent extends React.Component<ILoginComponentProps, any>{
                             Sign In
                         </Button>
                         <p>{this.state.invalid}</p>
-                        <Grid container>
-                            <Grid item xs>
-                                <Link href="#" variant="body2">
-                                    Forgot password?
-                                </Link>
-                            </Grid>
-                            <Grid item>
-                                <Link href="#" variant="body2">
-                                    {"Don't have an account? Sign Up"}
-                                </Link>
-                            </Grid>
-                        </Grid>
+                        <Link href="/signup" variant="body2">
+                            {"Don't have an account? Sign Up"}
+                        </Link>
                     </form>
                 </div>
                 <Box mt={8}>
