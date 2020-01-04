@@ -6,7 +6,7 @@ import WeekTwo from './components/tab-component/WeekTwoComponent';
 import { SignUpComponent } from './components/signup-component/SignUpComponent';
 import { store } from './Store';
 import LoginComponent from './components/login-component/LoginContainer'
-import { HomeComponent } from './components/home-component/HomeComponent';
+import HomeComponent from './components/home-component/HomeContainer';
 import { Provider } from 'react-redux';
 import Links from './components/week-component/WeekComponent';
 import Graph from './components/graph-test-component/GraphComponent';
@@ -23,7 +23,7 @@ const App: React.FC = () => {
             <Route path='/weekone' component={ScrollableTabsButtonAuto} />
             <Route path='/weektwo' component={WeekTwo} />
             <Route path='/graph' component={Graph} />
-            <Route path='/WorkOut' component={Links} />
+            <Route path='/workout' component={Links} />
             <Route path='/signup' component={SignUpComponent} />
             <Route path='/home' component={HomeComponent} />
             <Route path='/login' component={LoginComponent} />
