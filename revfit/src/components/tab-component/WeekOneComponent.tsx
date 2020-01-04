@@ -87,7 +87,6 @@ export default function ScrollableTabsButtonAuto() {
       </AppBar>
       <TabPanel value={value} index={0}>
         <Exam />
-        <p className="test">Item One</p>
       </TabPanel>
       <TabPanel value={value} index={1}>
         <DayTwo />
