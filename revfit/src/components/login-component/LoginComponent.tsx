@@ -1,6 +1,7 @@
 import React, { SyntheticEvent } from 'react'
-import { Typography, Link, Container, CssBaseline, TextField, FormControlLabel, Checkbox, Button, Grid, Box } from '@material-ui/core'
-//import { User } from '../../models/user'
+import { Typography, Link, Container, CssBaseline, TextField, FormControlLabel, Checkbox, Button, Box } from '@material-ui/core'
+import { User } from '../../models/user'
+import { Redirect } from 'react-router'
 //import { Link as Link2, Redirect } from 'react-router-dom';
 
 function Copyright() {
@@ -14,9 +15,11 @@ function Copyright() {
 }
 
 interface ILoginComponentProps {
-    //user: User
-    ersLogin: (u: string, p: string) => void
+    user: User
+    revfitLogin: (u: string, p: string) => void
 }
+
+
 
 export class LoginComponent extends React.Component<ILoginComponentProps, any>{
     constructor(props: any) {
@@ -42,24 +45,28 @@ export class LoginComponent extends React.Component<ILoginComponentProps, any>{
     submitLogin = async (e: SyntheticEvent) => {
         e.preventDefault()
         try {
-            await this.props.ersLogin(this.state.username, this.state.password)
-            this.setState({
-                ...this.state,
-                invalid: 'Login Failed Username or Password Wrong'
-            })
-        } catch (e) {
+            await this.props.revfitLogin(this.state.username, this.state.password)
+            if (this.props.user.userId) {
+                this.setState({
+                    ...this.state,
+                    invalid: 'Correct'
+                })
+            } else {
+                this.setState({
+                    ...this.state,
+                    invalid: 'Login Failed Username or Password Wrong'
+                })
+            }
 
+        } catch (e) {
+            console.log(e);
         }
     }
 
     render() {
-        // if (this.props.user.role.role === 'finance-manager') {
-        //     return <Redirect to="/finance-manger" />
-        // } else if (this.props.user.role.role === 'admin') {
-        //     return <Redirect to="/admin" />
-        // } else if (this.props.user.role.role === 'user') {
-        //     return <Redirect to="/userpage" />
-        // }
+        if (this.state.invalid === 'Correct') {
+            return <Redirect to="/home" />
+        }
         return (
             <Container component="main" maxWidth="xs">
                 <CssBaseline />
@@ -108,24 +115,15 @@ export class LoginComponent extends React.Component<ILoginComponentProps, any>{
                             Sign In
                         </Button>
                         <p>{this.state.invalid}</p>
-                        <Grid container>
-                            <Grid item xs>
-                                <Link href="#" variant="body2">
-                                    Forgot password?
-                                </Link>
-                            </Grid>
-                            <Grid item>
-                                <Link href="#" variant="body2">
-                                    {"Don't have an account? Sign Up"}
-                                </Link>
-                            </Grid>
-                        </Grid>
+                        <Link href="/signup" variant="body2">
+                            {"Don't have an account? Sign Up"}
+                        </Link>
                     </form>
                 </div>
                 <Box mt={8}>
                     <Copyright />
                 </Box>
-
+                <p>{this.props.user.username}</p>
             </Container>
         )
     }

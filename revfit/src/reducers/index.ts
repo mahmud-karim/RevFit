@@ -1,6 +1,8 @@
 import { combineReducers } from "redux";
 import { User } from "../models/user";
 import { loginReducer } from "./login-reducer";
+import { Food } from "../models/food";
+import { foodReducer } from "./food-reducer";
 
 //this file will contain the type definitions for our store
 //there will be many interfaces, that contain what each chunk of store should have
@@ -13,13 +15,19 @@ export interface ILoginState {
     user: User
 }
 
+export interface IFoodState {
+    food: Food[]
+}
+
 //will be the typing of our entire global state
 export interface IState {
     login: ILoginState
+    food: IFoodState
 }
 
 //this will combine all of our reducers
 //and make sure they fufill the state required by IState
 export const state = combineReducers<IState>({
-    login: loginReducer
+    login: loginReducer,
+    food: foodReducer
 })

@@ -1,8 +1,8 @@
 import { revfitUserClient } from "./revfit-client";
 
-export async function revfitRemoteLogin(username: string, password: string) {
+export async function revfitRemoteGetAllFood() {
     try {
-        const response = await revfitUserClient.post(`/user/login?username=${username}&password=${password}`)
+        const response = await revfitUserClient.get('/food')
         if (response.status === 200) {
             return {
                 status: response.status,
