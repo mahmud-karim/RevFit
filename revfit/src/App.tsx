@@ -23,7 +23,7 @@ const App: React.FC = () => {
             <Route path='/weekone' component={ScrollableTabsButtonAuto} />
             <Route path='/weektwo' component={WeekTwo} />
             <Route path='/graph' component={Graph} />
-            <Route path='/WorkOut' component={Links} />
+            <Route path='/workout' component={Links} />
             <Route path='/signup' component={SignUpComponent} />
             <Route path='/home' component={HomeComponent} />
             <Route path='/login' component={LoginComponent} />
