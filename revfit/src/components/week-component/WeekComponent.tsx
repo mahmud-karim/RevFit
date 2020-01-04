@@ -4,6 +4,7 @@ import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 import ScrollableTabsButtonAuto from '../tab-component/WeekOneComponent';
 import WeekTwo from '../tab-component/WeekTwoComponent';
+import AppbarComponent from '../appbar-component/AppbarComponent';
 
 
 
@@ -20,13 +21,14 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export default function Links() {
+
   const classes = useStyles();
   // const preventDefault = (event: React.SyntheticEvent) => event.preventDefault();
 
   return (
     
     <Typography className={classes.root}>
-      
+      <AppbarComponent/>
       <Link href="http://localhost:3000/WeekOne" >
       Week One  {ScrollableTabsButtonAuto}
       </Link>

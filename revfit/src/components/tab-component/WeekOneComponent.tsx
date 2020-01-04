@@ -10,6 +10,7 @@ import { DayTwo } from '../youtubeexapl/DayTwoComponent';
 import { DayThree } from '../youtubeexapl/DayThreeComponent';
 import { DayFour } from '../youtubeexapl/DayFourComponent';
 import { DayFive } from '../youtubeexapl/DayFiveComponent';
+import AppbarComponent from '../appbar-component/AppbarComponent';
 
 
 
@@ -64,7 +65,9 @@ export default function ScrollableTabsButtonAuto() {
 
   return (
     <div className={classes.root}>
+       <AppbarComponent/>
       <AppBar position="static" color="default">
+       
         <Tabs
           value={value}
           onChange={handleChange}

@@ -18,8 +18,8 @@ export default function Graph() {
 
   const axes = React.useMemo(
     () => [
-      { primary: true, type: 'linear', position: 'bottom' },
-      { type: 'linear', position: 'left' }
+      { primary: true, type: 'time', position: 'bottom' },
+      { type: 'utc', position: 'left' }
     ],
     []
   )
@@ -29,6 +29,7 @@ export default function Graph() {
     // space of its parent element automatically
     <div
       style={{
+        
         width: '400px',
         height: '300px'
       }}
