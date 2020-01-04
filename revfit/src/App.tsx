@@ -10,6 +10,7 @@ import HomeComponent from './components/home-component/HomeContainer';
 import { Provider } from 'react-redux';
 import Links from './components/week-component/WeekComponent';
 import Graph from './components/graph-test-component/GraphComponent';
+import { ProfileComponent } from './components/profile-component/ProfileComponent';
 
 
 const App: React.FC = () => {
@@ -27,6 +28,7 @@ const App: React.FC = () => {
             <Route path='/signup' component={SignUpComponent} />
             <Route path='/home' component={HomeComponent} />
             <Route path='/login' component={LoginComponent} />
+            <Route path='/profile' component={ProfileComponent} />
             <Route path='/' component={LoginComponent} />
           </Switch>
         </Router>
