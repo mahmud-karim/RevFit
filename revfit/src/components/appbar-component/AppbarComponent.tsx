@@ -14,15 +14,15 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
 import FitnessCenterSharpIcon from '@material-ui/icons/FitnessCenterSharp';
 import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
-
 import { BottomNavigationAction } from '@material-ui/core';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import BarChartIcon from '@material-ui/icons/BarChart';
 import HomeIcon from '@material-ui/icons/Home';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
+import { Redirect } from 'react-router';
+import { Link } from 'react-router-dom';
 
 
 const drawerWidth = 240;
@@ -100,6 +100,7 @@ export default function AppbarComponent() {
     };
 
     return (
+
         <div className={classes.root}>
             <CssBaseline />
             <AppBar
@@ -121,14 +122,10 @@ export default function AppbarComponent() {
                     <Typography variant="h6" noWrap>
                         RevFit
                     </Typography>
-
-                   
-
                     <BottomNavigationAction className="appbar" label="Home" icon={<HomeIcon />} />
                     <BottomNavigationAction className="appbar" label="Recipes" icon={<MenuBookIcon />} />
                     <BottomNavigationAction className="appbar" label="Progress" icon={<BarChartIcon />} />
                     <BottomNavigationAction className="appbar" label="Me" icon={<AccountBoxIcon />} />
-
                 </Toolbar>
             </AppBar>
             <Drawer
@@ -140,36 +137,36 @@ export default function AppbarComponent() {
                     paper: classes.drawerPaper,
                 }}
             >
-            <Typography variant="h6" noWrap>
-                        WorkOuts
+                <Typography variant="h6" noWrap>
+                    WorkOuts
                     </Typography>
                 <div className={classes.drawerHeader}>
                     <IconButton onClick={handleDrawerClose}>
                         {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
                     </IconButton>
                 </div>
-               
+
                 <Divider />
                 <List>
-                    {['Week One', 'Week Two', 'Week Three', 'Week Four'].map((text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemIcon>{index % 2 === 0 ? <FitnessCenterSharpIcon /> : <FitnessCenterIcon />}</ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItem>
-                    ))}
+                    <ListItem button href="/weekone" onClick={() => {
+                        console.log('clicked');
+                        return <Redirect to="/weekone" />
+                    }} >
+                        <ListItemIcon>{6 % 2 === 0 ? <FitnessCenterSharpIcon /> : <FitnessCenterIcon />}</ListItemIcon>
+                        <Link to="/weekone"> Week One</Link>
+                    </ListItem>
+                    <ListItem button >
+                        <ListItemIcon>{6 % 2 === 0 ? <FitnessCenterSharpIcon /> : <FitnessCenterIcon />}</ListItemIcon>
+                        <Link to="/weektwo"> Week Two</Link>
+                    </ListItem>
                 </List>
-                
-               
             </Drawer>
             <main
                 className={clsx(classes.content, {
                     [classes.contentShift]: open,
                 })}
             >
-
-
                 <div className={classes.drawerHeader} />
-
             </main>
         </div>
     );
