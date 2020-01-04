@@ -16,7 +16,7 @@ export interface ILoginState {
 }
 
 export interface IFoodState {
-    food: Food
+    food: Food[]
 }
 
 //will be the typing of our entire global state

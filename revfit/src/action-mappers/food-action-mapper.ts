@@ -5,15 +5,15 @@ export const revfitFoodType = {
     UNSUCCESSFUL_FOOD: 'REVFIT_FOOD_FAILED_FOOD'
 }
 
-export const revfitLogin = () => async (dispatch: any) => {
+export const revfitFood = () => async (dispatch: any) => {
     try {
         let res = await revfitRemoteGetAllFood()
-        // Succesful login
+        // Succesful got food
         if (res.status === 200) {
             dispatch({
                 type: revfitFoodType.SUCCESSFUL_FOOD,
                 payload: {
-                    user: res.body
+                    food: res.body
                 }
             })
         } else {

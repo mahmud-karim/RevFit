@@ -6,7 +6,7 @@ import WeekTwo from './components/tab-component/WeekTwoComponent';
 import { SignUpComponent } from './components/signup-component/SignUpComponent';
 import { store } from './Store';
 import LoginComponent from './components/login-component/LoginContainer'
-import { HomeComponent } from './components/home-component/HomeComponent';
+import HomeComponent from './components/home-component/HomeContainer';
 import { Provider } from 'react-redux';
 import Links from './components/week-component/WeekComponent';
 import Graph from './components/graph-test-component/GraphComponent';

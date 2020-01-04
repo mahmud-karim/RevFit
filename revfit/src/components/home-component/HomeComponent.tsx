@@ -1,8 +1,24 @@
 import React from "react"
 import { Container, Card, Typography, Divider, Button } from "@material-ui/core"
 import AppbarComponent from "../appbar-component/AppbarComponent"
+import { Food } from "../../models/food"
 
-export class HomeComponent extends React.Component<any, any>{
+interface ILoginComponentProps {
+    food: Food[]
+    revfitFood: () => void
+}
+
+
+export class HomeComponent extends React.Component<ILoginComponentProps, any>{
+
+
+    async componentDidMount() {
+        try {
+            await this.props.revfitFood()
+        } catch (e) {
+            console.log(e);
+        }
+    }
 
     render() {
         return (

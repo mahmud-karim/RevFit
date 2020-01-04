@@ -59,7 +59,7 @@ export class LoginComponent extends React.Component<ILoginComponentProps, any>{
             }
 
         } catch (e) {
-
+            console.log(e);
         }
     }
 
