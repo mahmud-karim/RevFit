@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { SyntheticEvent } from 'react';
 import clsx from 'clsx';
 import { makeStyles, useTheme, Theme, createStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -16,7 +16,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import FitnessCenterSharpIcon from '@material-ui/icons/FitnessCenterSharp';
 import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
-import { BottomNavigationAction } from '@material-ui/core';
+import { BottomNavigationAction, BottomNavigation, Button } from '@material-ui/core';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import BarChartIcon from '@material-ui/icons/BarChart';
 import HomeIcon from '@material-ui/icons/Home';
@@ -122,10 +122,10 @@ export default function AppbarComponent() {
                     <Typography variant="h6" noWrap>
                         RevFit
                     </Typography>
-                    <BottomNavigationAction className="appbar" label="Home" icon={<HomeIcon />} />
-                    <BottomNavigationAction className="appbar" label="Recipes" icon={<MenuBookIcon />} />
-                    <BottomNavigationAction className="appbar" label="Progress" icon={<BarChartIcon />} />
-                    <BottomNavigationAction className="appbar" label="Me" icon={<AccountBoxIcon />} />
+                    <Button component={Link} to="/home" color="secondary" className="appbar" startIcon={<HomeIcon />} />
+                    <Button component={Link} to="/library" color="secondary" className="appbar" startIcon={<MenuBookIcon />} />
+                    <Button component={Link} to="/progress" color="secondary" className="appbar" startIcon={<BarChartIcon />} />
+                    <Button component={Link} to="/account" color="secondary" className="appbar" startIcon={<AccountBoxIcon />} />
                 </Toolbar>
             </AppBar>
             <Drawer
