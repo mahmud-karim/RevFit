@@ -1,26 +1,29 @@
 import React from 'react'
 import { Chart } from 'react-charts'
+import { Grid } from '@material-ui/core'
 
-export default function Graph() {
+//export const ReimbursementRowComponent: React.FC<IReimbursementRowProps> = (props) => {
+export default function Graph(props) {
+
+  const testData = props.userData
+
+  const title = props.title
+
   const data = React.useMemo(
     () => [
       {
         label: 'Series 1',
-        data: [[0, 1], [1, 2], [2, 4], [3, 2], [4, 7]]
-      },
-      {
-        label: 'Series 2',
-        data: [[0, 3], [1, 1], [2, 5], [3, 6], [4, 4]]
+        data: testData
       }
     ],
     []
-    
   )
+
 
   const axes = React.useMemo(
     () => [
-      { primary: true, type: 'time', position: 'bottom' },
-      { type: 'utc', position: 'left' }
+      { primary: true, type: 'linear', position: 'bottom' },
+      { type: 'linear', position: 'left' }
     ],
     []
   )
@@ -30,11 +33,12 @@ export default function Graph() {
     // space of its parent element automatically
     <div
       style={{
-        
+
         width: '400px',
         height: '300px'
       }}
     >
+      <Grid>{title}</Grid>
       <Chart data={data} axes={axes} />
     </div>
   );
