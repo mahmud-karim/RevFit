@@ -1,4 +1,4 @@
-import React, { SyntheticEvent } from 'react';
+import React from 'react';
 import clsx from 'clsx';
 import { makeStyles, useTheme, Theme, createStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -16,7 +16,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import FitnessCenterSharpIcon from '@material-ui/icons/FitnessCenterSharp';
 import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
-import { BottomNavigationAction, BottomNavigation, Button } from '@material-ui/core';
+import { Button } from '@material-ui/core';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import BarChartIcon from '@material-ui/icons/BarChart';
 import HomeIcon from '@material-ui/icons/Home';

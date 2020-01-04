@@ -1,5 +1,5 @@
 import React from "react"
-import { Container, Card, Typography, Divider, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Button, Checkbox, FormControl, FormLabel, FormGroup, FormControlLabel } from "@material-ui/core"
+import { Container, Card, Typography, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Checkbox, FormControl, FormLabel, FormGroup, FormControlLabel } from "@material-ui/core"
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import AppbarComponent from "../appbar-component/AppbarComponent"
 import { Food } from "../../models/food"
@@ -14,7 +14,10 @@ export class HomeComponent extends React.Component<ILoginComponentProps, any>{
     constructor(props: any) {
         super(props)
         this.state = {
-            allFoods: false
+            allFoods: false,
+            goal: 2720,
+            intake: 0,
+            exercise: 0
         }
     }
 
@@ -32,11 +35,25 @@ export class HomeComponent extends React.Component<ILoginComponentProps, any>{
         }
     }
 
+    checked = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (e.target.checked) {
+            this.setState({
+                ...this.state,
+                intake: this.state.intake + Number(e.target.value)
+            })
+        } else {
+            this.setState({
+                ...this.state,
+                intake: this.state.intake - Number(e.target.value)
+            })
+        }
+    }
 
     render() {
         let rows = this.props.food.map((e) => {
-            return <FormControlLabel control={<Checkbox value={e.foodName} key={"food" + e.FoodId} />} label={e.foodName} />
+            return <FormControlLabel control={<Checkbox value={e.calories} onChange={this.checked} key={"food" + e.FoodId} />} label={e.foodName} />
         })
+        let result = this.state.goal - (this.state.intake + this.state.exercise)
 
         return (
             <Container component="main" maxWidth="md">
@@ -46,7 +63,7 @@ export class HomeComponent extends React.Component<ILoginComponentProps, any>{
                         Calories Remaining
                     </Typography>
                     <Typography variant="h6" component="h2">
-                        Goal: 2,720 - Food: 0 + Exercise: 0 = 2720
+                        Goal: {this.state.goal} - Food: {this.state.intake} + Exercise: {this.state.exercise} = {result}
                     </Typography>
                 </Card>
                 <br />
@@ -54,7 +71,6 @@ export class HomeComponent extends React.Component<ILoginComponentProps, any>{
                     <Typography gutterBottom variant="h5" component="h2">
                         Breakfast
                     </Typography>
-                    <Divider />
                     <ExpansionPanel>
                         <ExpansionPanelSummary
                             expandIcon={<ExpandMoreIcon />}
@@ -64,12 +80,11 @@ export class HomeComponent extends React.Component<ILoginComponentProps, any>{
                             <Typography className="heading">Add</Typography>
                         </ExpansionPanelSummary>
                         <ExpansionPanelDetails>
-                            <FormControl component="fieldset" className="formControl">
+                            <FormControl component="fieldset" className="formControl" >
                                 <FormLabel component="legend">Foods</FormLabel>
                                 <FormGroup>
                                     {rows}
                                 </FormGroup>
-                                <Button>Submit</Button>
                             </FormControl>
                         </ExpansionPanelDetails>
                     </ExpansionPanel>
@@ -79,7 +94,6 @@ export class HomeComponent extends React.Component<ILoginComponentProps, any>{
                     <Typography gutterBottom variant="h5" component="h2">
                         Lunch
                     </Typography>
-                    <Divider />
                     <ExpansionPanel>
                         <ExpansionPanelSummary
                             expandIcon={<ExpandMoreIcon />}
@@ -94,7 +108,6 @@ export class HomeComponent extends React.Component<ILoginComponentProps, any>{
                                 <FormGroup>
                                     {rows}
                                 </FormGroup>
-                                <Button>Submit</Button>
                             </FormControl>
                         </ExpansionPanelDetails>
                     </ExpansionPanel>
@@ -104,7 +117,6 @@ export class HomeComponent extends React.Component<ILoginComponentProps, any>{
                     <Typography gutterBottom variant="h5" component="h2">
                         Dinner
                     </Typography>
-                    <Divider />
                     <ExpansionPanel>
                         <ExpansionPanelSummary
                             expandIcon={<ExpandMoreIcon />}
@@ -119,7 +131,6 @@ export class HomeComponent extends React.Component<ILoginComponentProps, any>{
                                 <FormGroup>
                                     {rows}
                                 </FormGroup>
-                                <Button>Submit</Button>
                             </FormControl>
                         </ExpansionPanelDetails>
                     </ExpansionPanel>
