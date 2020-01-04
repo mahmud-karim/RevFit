@@ -1,5 +1,4 @@
 import React from "react";
-import { store } from "../../Store";
 import { User } from "../../models/user";
 import { RouteComponentProps } from "react-router";
 import Graph from "../graph-test-component/GraphComponent";
@@ -21,13 +20,14 @@ constructor (props:any){
 
     render(){
 
-let x = this.props.user.userId
+
 
 return(
     <div>
 
-<Graph/>
 
+
+<Graph/>
 
 
     </div>

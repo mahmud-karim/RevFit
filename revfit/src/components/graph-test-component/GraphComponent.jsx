@@ -14,6 +14,7 @@ export default function Graph() {
       }
     ],
     []
+    
   )
 
   const axes = React.useMemo(
