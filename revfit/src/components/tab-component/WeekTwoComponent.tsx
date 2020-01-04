@@ -10,6 +10,7 @@ import { DaySeven } from '../week-two-videos/DaySevenComponent';
 import { DayEight } from '../week-two-videos/DayEightComponent';
 import { DayNine } from '../week-two-videos/DayNineComponent';
 import { DayTen } from '../week-two-videos/DayTenComponent';
+import AppbarComponent from '../appbar-component/AppbarComponent';
 
 
 
@@ -65,7 +66,10 @@ export default function WeekTwo() {
 
   return (
     <div className={classes.root}>
+ <AppbarComponent/>
+      
       <AppBar position="static" color="default">
+      
         <Tabs
           value={value}
           onChange={handleChange}
