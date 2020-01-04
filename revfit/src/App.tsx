@@ -21,10 +21,11 @@ const App: React.FC = () => {
         <Router>
        
           <Switch>
-          <Route path='/graph' component={Graph} />
-          <Route path='/WorkOut' component={Links} />
-            <Route path='/WeekOne' component={ScrollableTabsButtonAuto} />
-            <Route path='/WeekTwo' component={WeekTwo} />
+
+            <Route path='/weekone' component={ScrollableTabsButtonAuto} />
+            <Route path='/weektwo' component={WeekTwo} />
+            <Route path='/graph' component={Graph} />
+            <Route path='/WorkOut' component={Links} />
             <Route path='/signup' component={SignUpComponent} />
             <Route path='/home' component={HomeComponent} />
             {/* <Route path='/login' component={LoginComponent} /> */}
