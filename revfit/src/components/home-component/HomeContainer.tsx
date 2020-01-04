@@ -5,7 +5,7 @@ import { HomeComponent } from "./HomeComponent";
 
 const mapStateToProps = (state: IState) => {
     return {
-        user: state.food.food
+        food: state.food.food
     }
 }
 
