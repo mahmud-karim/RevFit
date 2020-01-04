@@ -18,10 +18,6 @@ const App: React.FC = () => {
 
       <Provider store={store}>
         <Router>
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/dev
           <Switch>
             <Route path='/graph' component={Graph} />
             <Route path='/weekone' component={ScrollableTabsButtonAuto} />
@@ -30,11 +26,7 @@ const App: React.FC = () => {
             <Route path='/WorkOut' component={Links} />
             <Route path='/signup' component={SignUpComponent} />
             <Route path='/home' component={HomeComponent} />
-<<<<<<< HEAD
-            <Route path='/login' component={LoginComponent} /> */}
-=======
             <Route path='/login' component={LoginComponent} />
->>>>>>> origin/dev
             <Route path='/' component={LoginComponent} />
           </Switch>
         </Router>
