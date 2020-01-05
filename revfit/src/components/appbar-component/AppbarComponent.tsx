@@ -102,6 +102,7 @@ export default function AppbarComponent() {
     return (
 
         <div className={classes.root}>
+            
             <CssBaseline />
             <AppBar
                 position="fixed"
@@ -119,13 +120,17 @@ export default function AppbarComponent() {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" noWrap>
+                    {/* <Typography variant="h6" noWrap>
                         RevFit
-                    </Typography>
-                    <Button component={Link} to="/home" color="secondary" className="appbar" startIcon={<HomeIcon />} />
+                    </Typography> */}
+                    <Button component={Link} to="/home" color="secondary"className="appbar" startIcon={<HomeIcon />} >RevFit</Button>
                     <Button component={Link} to="/library" color="secondary" className="appbar" startIcon={<MenuBookIcon />} />
                     <Button component={Link} to="/progress" color="secondary" className="appbar" startIcon={<BarChartIcon />} />
                     <Button component={Link} to="/profile" color="secondary" className="appbar" startIcon={<AccountBoxIcon />} />
+                    <Button  href="/login" color="secondary" className="appbar" >Logout</Button>
+
+                    
+
                 </Toolbar>
             </AppBar>
             <Drawer

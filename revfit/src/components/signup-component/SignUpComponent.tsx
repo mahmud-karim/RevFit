@@ -178,7 +178,7 @@ export class SignUpComponent extends React.Component<any, any> {
                                 color="inherit"
                                 className='{classes.submit}'
                             >
-                                Post SignUp
+                              SignUp
                         </Button>
                         </form>
                         {message()}
