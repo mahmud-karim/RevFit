@@ -41,16 +41,18 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export default function ProfileComponent(props: any) {
-    console.log(props.user);
+
 
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
+    const [username, setUsername] = React.useState(props.user.username);
 
     const handleExpandClick = () => {
         setExpanded(!expanded);
     };
-    const updateUsername = () => {
-
+    const updateUsername = (e: any) => {
+        setUsername(e.target.value)
+        console.log(username);
     }
     const updatePassword = () => {
 
@@ -69,6 +71,9 @@ export default function ProfileComponent(props: any) {
     }
     const updateGoalWeight = () => {
 
+    }
+    const submitUpdate = (e: any) => {
+        e.preventDefault()
     }
 
     return (
@@ -104,8 +109,8 @@ export default function ProfileComponent(props: any) {
                             </CardActions>
                             <Collapse in={expanded} timeout="auto" unmountOnExit>
                                 <CardContent>
-                                    <form className="updateComponent" noValidate autoComplete="off">
-                                        <TextField value={props.user.username} onChange={updateUsername} label="Username" />
+                                    <form onSubmit={submitUpdate} className="updateComponent" noValidate autoComplete="off">
+                                        <TextField value={username} onChange={updateUsername} label="Username" />
                                         <TextField value={props.user.password} onChange={updatePassword} label="Password" />
                                         <TextField value={props.user.firstname} onChange={updateFirstname} label="First Name" />
                                         <TextField value={props.user.lastname} onChange={updateLastname} label="Last Name" />
