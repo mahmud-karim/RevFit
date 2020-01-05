@@ -63,7 +63,8 @@ export class HomeComponent extends React.Component<ILoginComponentProps, any>{
                         Calories Remaining
                     </Typography>
                     <Typography variant="h6" component="h2">
-                        Goal: {this.state.goal} - Food: {this.state.intake} + Exercise: {this.state.exercise} = {result}
+                        {/* Goal: {this.state.goal} - Food: {this.state.intake} + Exercise: {this.state.exercise} = {result} */}
+                        Goal: {this.state.goal} - Food: {this.state.intake} = {result}
                     </Typography>
                 </Card>
                 <br />
