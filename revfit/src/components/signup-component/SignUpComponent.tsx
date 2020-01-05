@@ -216,7 +216,9 @@ export class SignUpComponent extends React.Component<any, any> {
                             <Button color="secondary" type="submit"
                                 fullWidth
                                 variant="contained"
-                                className='{classes.submit}'>SignUp</Button>
+                                className='{classes.submit}'>
+                              SignUp
+                            </Button>
                         </form>
                         {message()}
                     </Card>
