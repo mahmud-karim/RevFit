@@ -1,13 +1,12 @@
 import React, { SyntheticEvent } from 'react'
 import { Container, Card, TextField, Button } from '@material-ui/core'
 import { submitSignUp } from '../../remote/revfit-user'
-import { Link } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 export class SignUpComponent extends React.Component<any, any> {
     constructor(props: any) {
         super(props)
         this.state = {
-            updated: false,
             userId: 0,
             username: '',
             password: '',
@@ -17,7 +16,8 @@ export class SignUpComponent extends React.Component<any, any> {
             height: 0,
             gender: '',
             startingWeight: 0,
-            goalWeight: 0
+            goalWeight: 0,
+            invalid: ''
         }
     }
     postUserId = (e: any) => {
@@ -88,17 +88,20 @@ export class SignUpComponent extends React.Component<any, any> {
             if (u.status === 200) {
                 this.setState({
                     ...this.state,
-                    updated: true
+                    invalid: 'Correct'
                 })
             } else {
                 this.setState({
                     ...this.state,
-                    updated: false
+                    invalid: 'Failed'
                 })
             }
         } catch (e) {
             console.log(e);
-
+            this.setState({
+                ...this.state,
+                invalid: 'Failed'
+            })
         }
 
 
@@ -106,9 +109,12 @@ export class SignUpComponent extends React.Component<any, any> {
 
     render() {
         let message = () => {
-            if (this.state.updated) {
-                return <p>SignUp Successful!</p>
+            if (this.state.invalid === 'Failed') {
+                return <p>SignUp Failed!</p>
             }
+        }
+        if (this.state.invalid === 'Correct') {
+            return <Redirect to="/home" />
         }
         return (
             <div>
@@ -217,8 +223,6 @@ export class SignUpComponent extends React.Component<any, any> {
                                 fullWidth
                                 variant="contained"
                                 className='{classes.submit}'
-                                component={Link}
-                                to="/home"
                             >
                                 SignUp
                             </Button>
