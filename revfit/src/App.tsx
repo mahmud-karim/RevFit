@@ -12,6 +12,7 @@ import Links from './components/week-component/WeekComponent';
 import Graph from './components/graph-test-component/GraphComponent';
 import { ProgressComponent } from './components/progress-component/ProgressComponent';
 import { LibraryComponent } from './components/library-component/LibraryComponent';
+import ProfileComponent from './components/profile-component/ProfileContainer';
 
 
 
@@ -22,7 +23,7 @@ const App: React.FC = () => {
       <Provider store={store}>
         <Router>
           <Switch>
-            <Route path='/graph' component={Graph} />
+            <Route path='/profile' component={ProfileComponent} />
             <Route path='/progress' component={ProgressComponent} />
             <Route path='/library' component={LibraryComponent} />
             <Route path='/weekone' component={ScrollableTabsButtonAuto} />
