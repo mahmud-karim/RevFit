@@ -2,7 +2,7 @@ import React from "react";
 import { RouteComponentProps } from "react-router";
 import Graph from "../graph-test-component/GraphComponent";
 import AppbarComponent from "../appbar-component/AppbarComponent";
-import { Container, Grid, Paper } from "@material-ui/core";
+import { Container, Grid } from "@material-ui/core";
 
 interface IUserProgressProps extends RouteComponentProps {
     userData: [[]]
