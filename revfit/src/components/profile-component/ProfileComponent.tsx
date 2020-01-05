@@ -14,6 +14,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import AppbarComponent from '../appbar-component/AppbarComponent';
 import { Container, Grid, TextField, Button } from '@material-ui/core';
 import profileBg from '../../assests/images/liprofile.png'
+import { submitSignUp } from '../../remote/revfit-user';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -41,34 +42,62 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export default function ProfileComponent(props: any) {
-    console.log(props.user);
+
 
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
+    const [username, setUsername] = React.useState(props.user.username);
+    const [password, setPassword] = React.useState(props.user.password);
+    const [firstname, setFirstname] = React.useState(props.user.firstname);
+    const [lastname, setLastname] = React.useState(props.user.lastname);
+    const [weight, setWeigth] = React.useState(props.user.weight);
+    const [height, setHeight] = React.useState(props.user.height);
+    const [goalWeight, setGoalWeight] = React.useState(props.user.goalWeight);
+    const [updated, setUpdated] = React.useState('')
 
     const handleExpandClick = () => {
         setExpanded(!expanded);
     };
-    const updateUsername = () => {
-
+    const updateUsername = (e: any) => {
+        setUsername(e.target.value)
+        console.log(username);
     }
-    const updatePassword = () => {
-
+    const updatePassword = (e: any) => {
+        setPassword(e.target.value)
+        console.log(password);
     }
-    const updateFirstname = () => {
-
+    const updateFirstname = (e: any) => {
+        setFirstname(e.target.value)
+        console.log(firstname);
     }
-    const updateLastname = () => {
-
+    const updateLastname = (e: any) => {
+        setLastname(e.target.value)
+        console.log(lastname);
     }
-    const updateWeight = () => {
-
+    const updateWeight = (e: any) => {
+        setWeigth(e.target.value)
+        console.log(weight);
     }
-    const updateHeight = () => {
-
+    const updateHeight = (e: any) => {
+        setHeight(e.target.value)
+        console.log(height);
     }
-    const updateGoalWeight = () => {
+    const updateGoalWeight = (e: any) => {
+        setGoalWeight(e.target.value)
+        console.log(goalWeight);
+    }
+    const submitUpdate = async (e: any) => {
+        e.preventDefault()
+        try {
+            let u = await submitSignUp(props.user.userId, username, password, firstname, lastname, weight, height, props.user.gender, weight, goalWeight)
+            if (u.status === 200) {
+                setUpdated('Updated')
+            }
+            console.log(u)
+        } catch (e) {
+            console.log(e);
 
+        }
     }
 
     return (
@@ -104,15 +133,15 @@ export default function ProfileComponent(props: any) {
                             </CardActions>
                             <Collapse in={expanded} timeout="auto" unmountOnExit>
                                 <CardContent>
-                                    <form className="updateComponent" noValidate autoComplete="off">
-                                        <TextField value={props.user.username} onChange={updateUsername} label="Username" />
-                                        <TextField value={props.user.password} onChange={updatePassword} label="Password" />
-                                        <TextField value={props.user.firstname} onChange={updateFirstname} label="First Name" />
-                                        <TextField value={props.user.lastname} onChange={updateLastname} label="Last Name" />
-                                        <TextField value={props.user.weight} onChange={updateWeight} label="Weight" />
-                                        <TextField value={props.user.height} onChange={updateHeight} label="Height" />
+                                    <form onSubmit={submitUpdate} className="updateComponent" noValidate autoComplete="off">
+                                        <TextField value={username} onChange={updateUsername} label="Username" />
+                                        <TextField value={password} onChange={updatePassword} label="Password" />
+                                        <TextField value={firstname} onChange={updateFirstname} label="First Name" />
+                                        <TextField value={lastname} onChange={updateLastname} label="Last Name" />
+                                        <TextField value={weight} onChange={updateWeight} label="Weight" />
+                                        <TextField value={height} onChange={updateHeight} label="Height" />
                                         <TextField value={props.user.gender} label="Gender" />
-                                        <TextField value={props.user.goalWeight} onChange={updateGoalWeight} label="Goal Weight" />
+                                        <TextField value={goalWeight} onChange={updateGoalWeight} label="Goal Weight" />
                                         <br />
                                         <p> </p>
                                         <br />
@@ -126,6 +155,7 @@ export default function ProfileComponent(props: any) {
                                             Update
                                         </Button>
                                     </form>
+                                    <p>{updated}</p>
                                 </CardContent>
                             </Collapse>
                         </Card>
