@@ -126,11 +126,10 @@ export default function AppbarComponent() {
                     <Button component={Link} to="/home" color="secondary"className="appbar" startIcon={<HomeIcon />} >RevFit</Button>
                     <Button component={Link} to="/library" color="secondary" className="appbar" startIcon={<MenuBookIcon />} />
                     <Button component={Link} to="/progress" color="secondary" className="appbar" startIcon={<BarChartIcon />} />
-
-                    <Button component={Link} to="/account" color="secondary" className="appbar" startIcon={<AccountBoxIcon />} />
+                    <Button component={Link} to="/profile" color="secondary" className="appbar" startIcon={<AccountBoxIcon />} />
                     <Button  href="/login" color="secondary" className="appbar" >Logout</Button>
 
-                    <Button component={Link} to="/profile" color="secondary" className="appbar" startIcon={<AccountBoxIcon />} />
+                    
 
                 </Toolbar>
             </AppBar>
