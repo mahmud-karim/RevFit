@@ -125,7 +125,7 @@ export default function AppbarComponent() {
                     <Button component={Link} to="/home" color="secondary" className="appbar" startIcon={<HomeIcon />} />
                     <Button component={Link} to="/library" color="secondary" className="appbar" startIcon={<MenuBookIcon />} />
                     <Button component={Link} to="/progress" color="secondary" className="appbar" startIcon={<BarChartIcon />} />
-                    <Button component={Link} to="/account" color="secondary" className="appbar" startIcon={<AccountBoxIcon />} />
+                    <Button component={Link} to="/profile" color="secondary" className="appbar" startIcon={<AccountBoxIcon />} />
                 </Toolbar>
             </AppBar>
             <Drawer
