@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import YouTube from 'react-youtube'
 
 
-class ReactYouTubeExampleComponent extends Component {
-  videoOnReady (event) {
+class ReactYouTubeExampleComponent1 extends Component {
+  videoOnReady1 (event) {
     // access to player in all event handlers via event.target
     // event.target.playVideoAt(50) // 50 seconds
-    const player = event.target
-    event.target.playVideo()
+    // const player = event.target
+    event.target.pauseVideo()
   
    
     console.log(event.target)
@@ -15,7 +15,7 @@ class ReactYouTubeExampleComponent extends Component {
   
   render () {
     const opts = {
-      height: '390',
+      height: '390',  
       width: '640',
       playerVars: { // https://developers.google.com/youtube/player_parameters
         autoplay: 1
@@ -26,7 +26,7 @@ class ReactYouTubeExampleComponent extends Component {
       <YouTube
         videoId={videoId}
         opts={opts}
-        onReady={this.videoOnReady}
+        onReady={this.videoOnReady1}
        
         
       />
@@ -34,14 +34,13 @@ class ReactYouTubeExampleComponent extends Component {
   }
 }
 
-export default ReactYouTubeExampleComponent
- export class Exam extends Component{
+export default ReactYouTubeExampleComponent1
+ export class DayTen extends Component{
   render(){
    return (
-     <div className="Exam">
-       <ReactYouTubeExampleComponent videoId='dhYOPzcsbGM'/>
+     <div className="DayTen">
+       <ReactYouTubeExampleComponent1 videoId='tfdy5AahM4M'/>
      </div>
    );
  }
  }
-            
