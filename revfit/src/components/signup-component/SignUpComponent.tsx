@@ -216,8 +216,11 @@ export class SignUpComponent extends React.Component<any, any> {
                             <Button color="secondary" type="submit"
                                 fullWidth
                                 variant="contained"
-                                className='{classes.submit}'>
-                              SignUp
+                                className='{classes.submit}'
+                                component={Link}
+                                to="/home"
+                            >
+                                SignUp
                             </Button>
                         </form>
                         {message()}
